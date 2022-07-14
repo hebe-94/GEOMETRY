@@ -4,7 +4,7 @@
 
     <select id="getList" resultType="com.geo.semiproject.VO.GeoEntrc">
         SELECT gid, bul_man_no, entrc_se, ent_man_no, eqb_man_sn, opert_de, sig_cd, ST_AsText(geom) geom
-        FROM public.z_kais_tl_spbd_entrc_11000
+        FROM public.z_kais_tl_spbd_entrc
         limit 10
     </select>
 
