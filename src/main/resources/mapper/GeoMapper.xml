@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.geo.semiproject.mapper.GeoMapper">
+
+    <select id="getList" resultType="com.geo.semiproject.VO.GeoEntrc">
+        SELECT gid, bul_man_no, entrc_se, ent_man_no, eqb_man_sn, opert_de, sig_cd, ST_AsText(geom) geom
+        FROM public.z_kais_tl_spbd_entrc_11000
+        limit 10
+    </select>
+
+</mapper>
