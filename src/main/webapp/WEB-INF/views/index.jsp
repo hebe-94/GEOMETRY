@@ -4,13 +4,6 @@
 <head>
     <meta charset="UTF-8">
     <title>Jsp page sample</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.1.1/css/ol.css" type="text/css">
-    <script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js"></script>
-    <script src="/webjars/jquery/dist/jquery.min.js"></script>
-    <link rel="stylesheet" href="/css/style.css">
-    <link rel="stylesheet" href="css/map.css">
-
-
 </head>
 
 <body>
@@ -39,14 +32,24 @@
             <td><input id="makeBufferExcel" type="button" value="Excel 파일"></td>
         </tr>
         <tr>
-            <td>지도로 이동하기</td>
-            <td><input id="moveToMap" type="button" value="지도로 이동하기"></td>
+            <td>지도 이미지로 저장하기</td>
+            <td><input id="saveImage" type="button" value="현재 지도 이미지 다운">
+                <a id="export-png" class="btn btn-default"><i class="fa fa-download"></i> Download PNG</a>
+                <a id="image-download" download="map.png"></a>
+            </td>
         </tr>
         </tbody>
 
     </table></div>
 </body>
 
+<script src="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/build/ol.js"></script>
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/openlayers/openlayers.github.io@master/en/v6.14.1/css/ol.css">
+
+<script src="/webjars/jquery/dist/jquery.min.js"></script>
+
+<link rel="stylesheet" href="/css/style.css">
+<link rel="stylesheet" href="css/map.css">
 <script type="text/javascript" src="js/map.js"></script>
 <script type="text/javascript" src="/js/geo.js"></script>
 
