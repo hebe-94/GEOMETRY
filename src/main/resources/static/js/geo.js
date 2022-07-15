@@ -1,6 +1,13 @@
 $("#makeTxt").on("click", function(){
     $.ajax({
-        url : "/geo/getList.do",
+        url : "/geo/makeText.do",
+        type : "GET"
+    })
+});
+
+$("#makeExcel").on("click", function(){
+    $.ajax({
+        url : "/geo/makeExcel.do",
         type : "GET"
     })
 });

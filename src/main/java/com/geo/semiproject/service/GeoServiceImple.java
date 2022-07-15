@@ -17,4 +17,11 @@ public class GeoServiceImple implements GeoService{
     public List<GeoEntrc> getList() {
         return geoMapper.getList();
     }
+
+    @Override
+    public List<String> getGeoList() {
+        return geoMapper.getGeoList();
+    }
+
+
 }

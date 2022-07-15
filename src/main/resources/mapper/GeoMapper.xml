@@ -4,7 +4,14 @@
 
     <select id="getList" resultType="com.geo.semiproject.VO.GeoEntrc">
         SELECT gid, bul_man_no, entrc_se, ent_man_no, eqb_man_sn, opert_de, sig_cd, ST_AsText(geom) geom
-        FROM public.z_kais_tl_spbd_entrc
+        FROM public.z_kais_tl_spbd_entrc_11000
+        ORDER BY gid asc
+        limit 10
+    </select>
+
+    <select id="getGeoList" resultType="com.geo.semiproject.VO.GeoEntrc">
+        SELECT ST_AsText(geom) geom
+        FROM public.z_kais_tl_spbd_entrc_11000
         limit 10
     </select>
 

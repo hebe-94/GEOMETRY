@@ -7,4 +7,5 @@ import java.util.List;
 
 public interface GeoService {
     List<GeoEntrc> getList();
+    List<String> getGeoList();
 }

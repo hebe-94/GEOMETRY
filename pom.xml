@@ -65,6 +65,7 @@
             <artifactId>spring-boot-starter-test</artifactId>
             <scope>test</scope>
         </dependency>
+        <!--JQuery-->
         <dependency>
             <groupId>org.webjars.bower</groupId>
             <artifactId>jquery</artifactId>
@@ -74,6 +75,25 @@
             <groupId>org.webjars</groupId>
             <artifactId>webjars-locator</artifactId>
             <version>0.40</version>
+        </dependency>
+        <!--poi library-->
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi</artifactId>
+            <version>5.0.0</version>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.poi</groupId>
+            <artifactId>poi-ooxml</artifactId>
+            <version>5.0.0</version>
+        </dependency>
+
+        <!-- https://mvnrepository.com/artifact/nl.bebr.nblib.geotools/lib-geotools -->
+        <dependency>
+            <groupId>nl.bebr.nblib.geotools</groupId>
+            <artifactId>lib-geotools</artifactId>
+            <version>10.4-NB126</version>
         </dependency>
     </dependencies>
 

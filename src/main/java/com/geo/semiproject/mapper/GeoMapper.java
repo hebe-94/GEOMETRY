@@ -9,4 +9,5 @@ import java.util.List;
 @Mapper
 public interface GeoMapper {
     public List<GeoEntrc> getList();
+    public List<String> getGeoList();
 }
