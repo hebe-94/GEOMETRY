@@ -89,12 +89,24 @@
             <version>5.0.0</version>
         </dependency>
 
-        <!-- https://mvnrepository.com/artifact/nl.bebr.nblib.geotools/lib-geotools -->
+<!--        &lt;!&ndash; https://mvnrepository.com/artifact/nl.bebr.nblib.geotools/lib-geotools &ndash;&gt;-->
         <dependency>
             <groupId>nl.bebr.nblib.geotools</groupId>
             <artifactId>lib-geotools</artifactId>
             <version>10.4-NB126</version>
         </dependency>
+
+<!--        JSP-->
+        <dependency>
+            <groupId>org.apache.tomcat.embed</groupId>
+            <artifactId>tomcat-embed-jasper</artifactId>
+            <scope>provided</scope>
+        </dependency>
+        <dependency>
+            <groupId>javax.servlet</groupId>
+            <artifactId>jstl</artifactId>
+        </dependency>
+
     </dependencies>
 
     <build>
