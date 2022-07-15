@@ -2,10 +2,14 @@ package com.geo.semiproject.controller;
 
 import com.geo.semiproject.VO.GeoEntrc;
 import com.geo.semiproject.service.GeoService;
+import com.vividsolutions.jts.geom.Geometry;
+import com.vividsolutions.jts.io.WKTWriter;
 import org.apache.poi.ss.usermodel.Cell;
 import org.apache.poi.ss.usermodel.Row;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
+import org.geotools.geometry.jts.WKTReader2;
+import org.geotools.geometry.jts.WKTWriter2;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -141,12 +145,28 @@ public class GeoController {
             XSSFSheet sheet = workbook.createSheet("spbd_entrc");
 
             Map<Integer, Object[]> excelRows = new TreeMap<>();
-            excelRows.put(0,new Object[]{"gid","bulManNO","entrcSe","entManNo","EqbManSn","OpertDe","sigCd","geom"});
+            excelRows.put(0,new Object[]{"gid","bulManNO","entrcSe","entManNo","EqbManSn","OpertDe","sigCd","geom","BufferedGeom"});
             for(int i = 0; i < geoList.size(); i++){
                 GeoEntrc excelRow = geoList.get(i);
+                // 여기서 작업
+                WKTReader2 wktReader2 = new WKTReader2();
+                Geometry geometry = (Geometry) wktReader2.read(excelRow.getGeom());
+                logger.info("-----getGeom-----");
+                logger.info(excelRow.getGeom().getClass().getName());
+                logger.info("-----Geometry.toString-----");
+                logger.info(geometry.toString());
+                logger.info("-----Geometry-----");
+                logger.info(geometry.getGeometryType()); // point라서
+                Geometry buffer = geometry.buffer(2.0);
+                logger.info("-----bufferedGeometry-----");
+                logger.info(buffer.getGeometryType()); // polygon으로 나옴
+                WKTWriter2 wktWriter2 = new WKTWriter2();
+                String buffer_String = wktWriter2.write(buffer);
+                logger.info("-----buffer_String-----");
+                logger.info(buffer_String.getClass().getName()); // String으로 나옴
 
                 excelRows.put(i+1,new Object[]{excelRow.getGid(),excelRow.getBulManNo(),excelRow.getEntrcSe(), excelRow.getEntManNo(),excelRow.getEqbManSn(),
-                        excelRow.getOpertDe(),excelRow.getSigCd(),excelRow.getGeom()});
+                        excelRow.getOpertDe(),excelRow.getSigCd(),excelRow.getGeom(), buffer_String});
             }
             Set<Integer> keySet = excelRows.keySet();
             List<Integer> keySetList = new ArrayList<>(keySet);

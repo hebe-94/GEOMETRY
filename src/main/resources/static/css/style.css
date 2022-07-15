@@ -4,7 +4,7 @@ table {
     width: 500px;
 }
 th, td {
-    width: 30px;
+    width: 100px;
     height: 40px;
     border: 1px solid #444444;
     text-align: center;

@@ -11,3 +11,9 @@ $("#makeExcel").on("click", function(){
         type : "GET"
     })
 });
+$("#makeBufferExcel").on("click", function(){
+    $.ajax({
+        url : "/geo/makeBufferExcel.do",
+        type : "GET"
+    })
+});
