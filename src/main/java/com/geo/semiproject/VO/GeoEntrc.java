@@ -14,6 +14,4 @@ public class GeoEntrc {
     private String opertDe;
     private String sigCd;
     private String geom;
-
-
 }

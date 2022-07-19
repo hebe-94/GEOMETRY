@@ -17,4 +17,14 @@ public class pageController {
     public String test(){
         return "/index";
     }
+
+    @GetMapping("/picture")
+    public String makePicture(){
+        return "/makePicture";
+    }
+
+    @GetMapping("/polygon")
+    public String makePolygon(){
+        return "/makePolygon";
+    }
 }
